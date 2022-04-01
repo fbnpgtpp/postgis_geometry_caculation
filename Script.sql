@@ -4,6 +4,9 @@
 --ST_LineMerge(geometry amultilinestring)
 --ST_Area(geometry g1)
 --ST_Length(geometry a_2dlinestring)
+--ST_IsClosed(geometry g)
+--ST_AddPoint(geometry linestring, geometry point)
+--ST_StartPoint(geometry geomA)
 
 with cte1 as (
 select g.id, g.geom, u.srid, p2.modelname, u2.unit area_unit, u2.factor_m2 
