@@ -14,7 +14,7 @@ join parcels p3 on p.parcelid = p3.id
 join farmers f on p3.farmerid = f.id
 join units u2 on f.areaunitid  = u2.id
 join utm_zone u 
-on ST_Contains(u.geom, st_setsrid(g.geom,4326))
+on ST_Contains(u.geom, st_setsrid(g.geom,4326)) --Spatial join
 )
 
 select id, modelname, area_unit,--st_setsrid(geom,4326) as geom
