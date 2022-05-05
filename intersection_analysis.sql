@@ -56,3 +56,13 @@ WHERE ST_INTERSECTS(ST_TRANSFORM(ST_MAKEVALID(a.geom),4326), ST_TRANSFORM(ST_MAK
 
 -- Drop temp table
 --DROP table tmp_test;
+
+with cte as(
+
+	select a.id, e.code, a.geom
+	from gps a
+	join parcelwaves b on a.parcelwaveid = b.id
+	join farmerwaves c on b.farmerwaveid = c.id
+	join projectwaves d on c.projectwaveid = d.id
+	join waves e on d.waveid = e.id
+)
