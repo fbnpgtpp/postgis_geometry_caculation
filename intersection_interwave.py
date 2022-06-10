@@ -1,9 +1,6 @@
 from importlib import import_module
 import psycopg2 as psql
 
-
-print("library imported")
-
 try :
     conn = psql.connect(host="db01.postgres.database.azure.com", dbname="fielddata", user="pp_fabien", password="9N9GNK78TyXQtls6")
     conn.set_client_encoding('utf-8')
